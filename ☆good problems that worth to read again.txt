@@ -3,5 +3,6 @@ No.                        Difficulty      ¡Ì      ¡Á
 20. Valid Parentheses       Easy          2682    136
 35. Search Insert Position  Easy          1190    165
 53. Maximum Subarray        Easy          3861    133
+67. Add Binary              Easy           866    174
 
 
