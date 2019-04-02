@@ -1,8 +1,9 @@
-No.                        Difficulty      ¡Ì      ¡Á
-1. Two Sum                  Easy         10209    332
-20. Valid Parentheses       Easy          2682    136
-35. Search Insert Position  Easy          1190    165
-53. Maximum Subarray        Easy          3861    133
-67. Add Binary              Easy           866    174
-
+No.                       			  	Difficulty      ?      ?
+1. Two Sum                			  	 Easy         10209    332
+20. Valid Parentheses     			  	 Easy          2682    136
+35. Search Insert Position			  	 Easy          1190    165
+53. Maximum Subarray      			  	 Easy          3861    133
+67. Add Binary            			  	 Easy           866    174
+70. Climbing Stairs       			  	 Easy          1948     73
+83. Remove Duplicates from Sorted List	 Easy           698     75
 
