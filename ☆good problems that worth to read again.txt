@@ -8,7 +8,7 @@ No.                       			  	Difficulty     approve      oppose
 83. Remove Duplicates from Sorted List	 Easy             698         75
 88. Merge Sorted Array                   Easy            1000        2596 (Personally, I think the problem is OK.)
 118. Pascal's Triangle                   Easy             642         72
-
+119. Pascal's Triangle II                Easy 			  434	     156
 
 
 
