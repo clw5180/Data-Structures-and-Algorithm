@@ -6,10 +6,10 @@ No.                       			  	Difficulty     approve      oppose
 67. Add Binary            			  	 Easy             866        174
 70. Climbing Stairs       			  	 Easy            1948         73
 83. Remove Duplicates from Sorted List	 Easy             698         75
-88. Merge Sorted Array                   Easy            1000        2596 (Personally, I think the problem is OK.)
+88. Merge Sorted Array                   Easy            1000       2596 (Personally, I think the problem is OK.)
 118. Pascal's Triangle                   Easy             642         72
 119. Pascal's Triangle II                Easy 			  434	     156
 121. Best Time to Buy and Sell Stock     Easy			 2358	     114
-
+122. Best Time to Buy and Sell Stock II  Easy   		  894       1233 (Personally, I think the problem is OK.)
 
 
