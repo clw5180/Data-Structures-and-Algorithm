@@ -13,3 +13,4 @@ No.                       			  	Difficulty     approve      oppose
 122. Best Time to Buy and Sell Stock II  Easy   		  894       1233 (Personally, I think the problem is OK.)
 125. Valid Palindrome					 Easy			  544	    1558 (Personally, I think the problem is OK.)
 136. Single Number						 Easy 		     2232 		  85
+167. Two Sum II - Input array is sorted  Easy 			  832 		 353
