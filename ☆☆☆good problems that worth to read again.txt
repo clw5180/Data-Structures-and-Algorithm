@@ -14,4 +14,5 @@ No.                       			  	Difficulty     approve        oppose
 125. Valid Palindrome					 Easy			  544	      1558 (Personally, I think the problem is OK.)
 136. Single Number						 Easy 		     2232 	        85
 167. Two Sum II - Input array is sorted  Easy 			  832 	       353
+168. Excel Sheet Column Title 			 Easy 			  664 		   131
 169. Majority Element 					 Easy 			 1501	       135
