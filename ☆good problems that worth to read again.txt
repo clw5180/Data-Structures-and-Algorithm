@@ -16,3 +16,5 @@ No.                       			  	Difficulty     approve        oppose
 167. Two Sum II - Input array is sorted  Easy 			  832 	       353
 168. Excel Sheet Column Title 			 Easy 			  664 		   131
 169. Majority Element 					 Easy 			 1501	       135
+171. Excel Sheet Column Number 			 Easy 			  492 			89
+172. Factorial Trailing Zeroes 	      	 Easy 			  439 		   634 (Personally, I think the problem is OK.)
