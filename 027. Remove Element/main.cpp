@@ -22,7 +22,7 @@ int removeElement(vector<int>& nums, int val)
 	return numsSize - nMovStep;
 }
 
-//ÍøÓÑ¸ü¼ò½àµÄ´ğ°¸£º
+//ç½‘å‹æ›´ç®€æ´çš„ç­”æ¡ˆï¼š
 //int removeElement(vector<int>& nums, int val) 
 //{
 //	int j = 0;
