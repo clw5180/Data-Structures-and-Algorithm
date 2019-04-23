@@ -24,3 +24,4 @@ No.                       			  				Difficulty     approve         oppose
 189. Rotate Array									 Easy		    1195			583
 202. Happy Number    							Easy			806 				198
 203. Remove Linked List Elements			Easy			 769 			44
+204. Count Primes 									Easy 			977			 381
