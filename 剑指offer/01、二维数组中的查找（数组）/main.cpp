@@ -37,7 +37,8 @@ int BinaryFindBiggerIndex(int target, vector<int>& nums, int _left, int _right)
 	{
 		int middle = (left + right) / 2;
 		if (nums[middle] > target)
-			right = middle;   
+			right = middle;    //clw note：这里有个小坑，比如{4,6}，这里middle一定会指向下标靠前的数字4
+		                                      //          因此如果写成right = middle - 1就会引发错误！
 		else if (nums[middle] < target)
 		{
 			left = middle + 1;
