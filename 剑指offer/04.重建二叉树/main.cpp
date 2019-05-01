@@ -22,17 +22,34 @@ TreeNode* reConstructBinaryTree(vector<int> pre, vector<int> vin)
 {
 	if (pre.empty() || vin.empty())
 		return NULL;
-	int nRoot = pre[0];
-	int count = 0;
-	vector<int> subPre, subVin;
-	for (int i = 0; vin[i] != nRoot; ++i)
+	int len = pre.size();
+	if (len == 1)
 	{
-		subVin.push_back(vin[i]);
-		subPre.push_back(pre[i + 1]);
-		++count;
-	} 
+		TreeNode* leaveNode = new TreeNode(pre[0]);
+		return leaveNode;
+	}
 
-	reConstructBinaryTree(subPre, subVin);
+	TreeNode* BiTreeNode = new TreeNode(pre[0]);
+
+	vector<int> subPre_left, subVin_left, subPre_right, subVin_right;
+	int index = -1;
+	for (int i = 0; vin[i] != pre[0]; ++i)
+	{
+		subPre_left.push_back(pre[i+1]);
+		subVin_left.push_back(vin[i]);
+		index = i;
+	}
+	for (int i = index + 2; i < len; ++i)
+	{
+		subPre_right.push_back(pre[i]);
+		subVin_right.push_back(vin[i]);
+	}
+
+
+	BiTreeNode->left = reConstructBinaryTree(subPre_left, subVin_left);
+	BiTreeNode->right = reConstructBinaryTree(subPre_right, subVin_right);
+
+	return BiTreeNode;
 }
 
 int main()
