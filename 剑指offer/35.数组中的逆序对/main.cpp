@@ -5,38 +5,38 @@
 using namespace std;
 
 
-//ÖÎµÄÊµÏÖ£¨¹é²¢ÅÅĞò£©  
+//æ²»çš„å®ç°ï¼ˆå½’å¹¶æ’åºï¼‰  
 void merge(std::vector<int> &v, std::vector<int> &v1, std::vector<int> &v2, long long& count)
 {
-	//±ÈÈç8 4 5 7 1 3 6 2£¬µÚÒ»´Î½øÀ´µÄÊÇ8ºÍ4£¬µÚ¶ş´Î½øÀ´µÄÊÇ5ºÍ7....×îºó½øÀ´µÄÊÇ4 5 7 8ºÍ1 2 3 6
+	//æ¯”å¦‚8 4 5 7 1 3 6 2ï¼Œç¬¬ä¸€æ¬¡è¿›æ¥çš„æ˜¯8å’Œ4ï¼Œç¬¬äºŒæ¬¡è¿›æ¥çš„æ˜¯5å’Œ7....æœ€åè¿›æ¥çš„æ˜¯4 5 7 8å’Œ1 2 3 6
 	int len1 = v1.size();
 	int len2 = v2.size();
 	int p1 = 0, p2 = 0;
 	while (p1 < len1 || p2 < len2)
 	{
-		if (p1 >= len1)  //Èç¹ûp1ÒÑ¾­³¬³ö·¶Î§£¬ËµÃ÷vec1µÄËùÓĞ×îĞ¡Öµ¶¼ÒÑ¾­½øÈëvecÁË£¬ÏÖÔÚ¾ÍÖ»²Ù×÷vec2¾Í¿ÉÒÔÁË
+		if (p1 >= len1)  //å¦‚æœp1å·²ç»è¶…å‡ºèŒƒå›´ï¼Œè¯´æ˜vec1çš„æ‰€æœ‰æœ€å°å€¼éƒ½å·²ç»è¿›å…¥vecäº†ï¼Œç°åœ¨å°±åªæ“ä½œvec2å°±å¯ä»¥äº†
 			v.push_back(v2[p2++]);
 		else if (p2 >= len2)
 		{
 			v.push_back(v1[p1++]);
-			//count = count + len2;  //±ÈÈç0 3 4ºÍ1 2£¬´ËÊ±p1Ö¸Ïò3£¬p2Ö¸ÏòÄ©Î²£¬Òò´ËÃ¿´Î¶¼Òª¼Ólen2
-			//×¢ÒâÕâÀïºÍÏÂÃæcountÍ³¼ÆÓĞÖØ¸´£¬²»ÓÃÔÙÍ³¼ÆÁË£¡£¡
+			//count = count + len2;  //æ¯”å¦‚0 3 4å’Œ1 2ï¼Œæ­¤æ—¶p1æŒ‡å‘3ï¼Œp2æŒ‡å‘æœ«å°¾ï¼Œå› æ­¤æ¯æ¬¡éƒ½è¦åŠ len2
+			//æ³¨æ„è¿™é‡Œå’Œä¸‹é¢countç»Ÿè®¡æœ‰é‡å¤ï¼Œä¸ç”¨å†ç»Ÿè®¡äº†ï¼ï¼
 		}
-		else if (v1[p1] < v2[p2])  //Èç¹ûp1¡¢p2·Ö±ğÃ»³¬len1¡¢len2µÄ·¶Î§£¬ÇÒp1¶ÔÓ¦ÔªËØĞ¡ÓÚp2
+		else if (v1[p1] < v2[p2])  //å¦‚æœp1ã€p2åˆ†åˆ«æ²¡è¶…len1ã€len2çš„èŒƒå›´ï¼Œä¸”p1å¯¹åº”å…ƒç´ å°äºp2
 		{
-			v.push_back(v1[p1++]);   //Ôòp1¶ÔÓ¦ÔªËØ½øvec£¬È»ºóp1++
+			v.push_back(v1[p1++]);   //åˆ™p1å¯¹åº”å…ƒç´ è¿›vecï¼Œç„¶åp1++
 		}
 			
-		else                        //·´Ö®£¬Èç¹ûÊÇp2¶ÔÓ¦ÔªËØĞ¡ÓÚp1
+		else                        //åä¹‹ï¼Œå¦‚æœæ˜¯p2å¯¹åº”å…ƒç´ å°äºp1
 		{
-			v.push_back(v2[p2++]); //Ôòp2¶ÔÓ¦ÔªËØ½øvec£¬È»ºóp2++
-			count += len1 - p1; //±ÈÈç4 8 10ºÍ5 7£¬p1Ö¸Ïò8£¬p2Ö¸Ïò5£¬5Ğ¡ÓÚ8ºÍ10£¬¼´ÄæĞòÊıÒª¶àlen1-p1=3-1=2
+			v.push_back(v2[p2++]); //åˆ™p2å¯¹åº”å…ƒç´ è¿›vecï¼Œç„¶åp2++
+			count += len1 - p1; //æ¯”å¦‚4 8 10å’Œ5 7ï¼Œp1æŒ‡å‘8ï¼Œp2æŒ‡å‘5ï¼Œ5å°äº8å’Œ10ï¼Œå³é€†åºæ•°è¦å¤šlen1-p1=3-1=2
 		}
 			
 	}
 }
 
-//·Ö + µ÷ÓÃÖÎ
+//åˆ† + è°ƒç”¨æ²»
 void InversePairsCore(vector<int>& data, long long& count)
 {
 	int len = data.size();
@@ -53,9 +53,9 @@ void InversePairsCore(vector<int>& data, long long& count)
 		else
 			vec2.push_back(data[i]);
 	}
-	InversePairsCore(vec1, count); //±ÈÈç 8 4 5 7 1 3 6 2£¬·Öµ½Ö»Ê£ÏÂ8£¬return
-	InversePairsCore(vec2, count); //ÁíÒ»±ßÖ»Ê£ÏÂ4£¬Ò²return
-	data.clear(); //vecÖ®Ç°·Ö±ğ¶ÔÒ»¸öÊı8ºÍÒ»¸öÊı4½ømerge£¬µÃµ½8 4£¬ÕâÀïĞèÒªÏÈÇåµô£¬È»ºóÖØÅÅ±ä³É4,8£¬ÖØĞÂ±£´æÔÚÖ®Ç°MergeSort(vec1);µÄvec1ÖĞ£¬ 
+	InversePairsCore(vec1, count); //æ¯”å¦‚ 8 4 5 7 1 3 6 2ï¼Œåˆ†åˆ°åªå‰©ä¸‹8ï¼Œreturn
+	InversePairsCore(vec2, count); //å¦ä¸€è¾¹åªå‰©ä¸‹4ï¼Œä¹Ÿreturn
+	data.clear(); //vecä¹‹å‰åˆ†åˆ«å¯¹ä¸€ä¸ªæ•°8å’Œä¸€ä¸ªæ•°4è¿›mergeï¼Œå¾—åˆ°8 4ï¼Œè¿™é‡Œéœ€è¦å…ˆæ¸…æ‰ï¼Œç„¶åé‡æ’å˜æˆ4,8ï¼Œé‡æ–°ä¿å­˜åœ¨ä¹‹å‰MergeSort(vec1);çš„vec1ä¸­ï¼Œ 
 	merge(data, vec1, vec2, count);
 }
 
@@ -65,6 +65,67 @@ int InversePairs(vector<int> data)
 	InversePairsCore(data, count);
 	return count % 1000000007;
 }
+
+
+//ç½‘å‹æ—¶é—´å°‘4å€ï¼ˆ50msï¼‰ï¼Œå†…å­˜å°‘1.5å€çš„æ–¹æ¡ˆï¼š
+/*
+static const auto io_sync_off = []() 
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+	return nullptr;
+}();
+class Solution {
+public:
+	int InversePairs(vector<int> data) {
+		if (data.size() == 0) return 0;
+		long long count = 0;
+		int start = 0;
+		int end = int(data.size()) - 1;
+		vector<int> data_temp;
+		for (auto iter = data.begin(); iter != data.end(); iter++)
+		{
+			data_temp.push_back(*iter);
+		}
+		count = InversePairs(data, data_temp, 0, end);
+		return count % 1000000007;
+	}
+private:
+	long long InversePairs(vector<int>& data, vector<int>& copy, int low, int high)
+	{
+		if (low == high)
+		{
+			copy[low] = data[low];
+			return 0;
+		}
+		long long left;
+		long long right;
+		int length = (high - low) >> 2;
+		left = InversePairs(copy, data, low, (low + (length)));
+		right = InversePairs(copy, data, (low + (length)+1), high);
+		int i = low + (length);
+		int j = high;
+		int copy_index = high;
+		long long count = 0;
+		while (i >= low && j >= (low + (length)+1))
+		{
+			if (data[i] > data[j])
+			{
+				count += j - (low + (length));
+				copy[copy_index--] = data[i--];
+			}
+			else
+			{
+				copy[copy_index--] = data[j--];
+			}
+		}
+		for (; i >= low; i--) copy[copy_index--] = data[i];
+		for (; j >= (low + (length)+1); j--) copy[copy_index--] = data[j];
+		return left + count + right;
+	}
+};
+*/
 
 int main()
 {
