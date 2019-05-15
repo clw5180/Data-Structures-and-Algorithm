@@ -4,7 +4,34 @@
 
 using namespace std;
 
-//ÎÒµÄ·½°¸£¨²Î¿¼ÍøÓÑhttps://blog.csdn.net/ljianhui/article/details/13950509£¬·Ç³£ºÃµÄ·½·¨£©
+//ç½‘å‹æ–¹æ¡ˆ1ï¼šDP
+int maxSubArray(vector<int>& nums) 
+{
+	int nEnd=nums[0];
+	int nAll=nums[0];
+    int len = nums.size();
+	for (int i = 1; i < len; i++) 
+    {
+		nEnd=max(nEnd+nums[i], nums[i]);
+		nAll=max(nAll, nEnd);
+	}
+	return nAll;
+}
+
+//ç½‘å‹æ–¹æ¡ˆ2ï¼šDP
+int maxSubArray(vector<int>& nums)
+{
+        int res = INT_MIN;
+        int curSum = 0;
+        for (int num : nums) 
+		{
+            curSum = max(num,curSum + num);//æ¢å¥è¯å°±æ˜¯ï¼Œå¦‚æœcursumä¸ºè´Ÿï¼Œé‚£ä¹ˆæœ€å¤§å€¼å°±æ˜¯num
+            res = max(curSum,res);
+        }
+        return res;
+}
+
+//æˆ‘çš„æ–¹æ¡ˆï¼ˆå‚è€ƒç½‘å‹https://blog.csdn.net/ljianhui/article/details/13950509ï¼Œä¸é”™çš„æ–¹æ³•ï¼‰
 int maxSubArray(vector<int>& nums) 
 {
 	int len = nums.size();
@@ -18,17 +45,17 @@ int maxSubArray(vector<int>& nums)
 	for (int i = 0; i < len; ++i)
 	{
 		subSum += nums[i];
-		if (subSum > SubSumMax) //Èç¹ûµ±Ç°ÕÒµÄ×ÓÊı×éÖ®ºÍ´óÓÚÖ®Ç°µÄ×î´ó×ÓÊı×éÖ®ºÍ
-			SubSumMax = subSum;  //Ôò¸Ã×ÓÊı×éÖ®ºÍÎª×î´ó×ÓÊı×éÖ®ºÍ
-		else if (subSum < 0) //Èç¹û×ÓÊı×éÖ®ºÍĞ¡ÓÚ0£¬Ö±½ÓÇåµô´ÓÏÂÒ»¸öÊı¿ªÊ¼ÕÒ£»ÒòÎªÒ»¶¨²»ÊÇ×î´ó×ÓÊı×é
+		if (subSum > SubSumMax) //å¦‚æœå½“å‰æ‰¾çš„å­æ•°ç»„ä¹‹å’Œå¤§äºä¹‹å‰çš„æœ€å¤§å­æ•°ç»„ä¹‹å’Œ
+			SubSumMax = subSum;  //åˆ™è¯¥å­æ•°ç»„ä¹‹å’Œä¸ºæœ€å¤§å­æ•°ç»„ä¹‹å’Œ
+		else if (subSum < 0) //å¦‚æœå­æ•°ç»„ä¹‹å’Œå°äº0ï¼Œç›´æ¥æ¸…æ‰ä»ä¸‹ä¸€ä¸ªæ•°å¼€å§‹æ‰¾ï¼›å› ä¸ºä¸€å®šä¸æ˜¯æœ€å¤§å­æ•°ç»„
 			subSum = 0;
 
-		if (nums[i] < 0) //Í³¼Æ¸ºÊıµÄ¸öÊı£¬Õâ¸öÖ»Õë¶ÔÈ«Îª¸ºµÄÊı×é
+		if (nums[i] < 0) //ç»Ÿè®¡è´Ÿæ•°çš„ä¸ªæ•°ï¼Œè¿™ä¸ªåªé’ˆå¯¹å…¨ä¸ºè´Ÿçš„æ•°ç»„
 			++negativeCnt;
-		if (nums[i] > maxNumber) //ÕÒµ½Êı×éÖĞµÄ×î´óÖµ£¬Õâ¸öÖ»Õë¶ÔÈ«Îª¸ºµÄÊı×é
+		if (nums[i] > maxNumber) //æ‰¾åˆ°æ•°ç»„ä¸­çš„æœ€å¤§å€¼ï¼Œè¿™ä¸ªåªé’ˆå¯¹å…¨ä¸ºè´Ÿçš„æ•°ç»„
 			maxNumber = nums[i];
 	}
-	if (negativeCnt == len) //Èç¹ûÊÇÈ«Îª¸ºµÄÊı×é£¬Ö±½ÓÈ¡×î´óÖµ×÷Îª×î´ó×ÓÊı×é
+	if (negativeCnt == len) //å¦‚æœæ˜¯å…¨ä¸ºè´Ÿçš„æ•°ç»„ï¼Œç›´æ¥å–æœ€å¤§å€¼ä½œä¸ºæœ€å¤§å­æ•°ç»„
 		SubSumMax = maxNumber;
 	return SubSumMax;
 }
