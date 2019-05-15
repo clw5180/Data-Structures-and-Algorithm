@@ -9,9 +9,9 @@ int maxSubArray(vector<int>& nums)
 {
 	int nEnd=nums[0];
 	int nAll=nums[0];
-    int len = nums.size();
+   	int len = nums.size();
 	for (int i = 1; i < len; i++) 
-    {
+    	{
 		nEnd=max(nEnd+nums[i], nums[i]);
 		nAll=max(nAll, nEnd);
 	}
